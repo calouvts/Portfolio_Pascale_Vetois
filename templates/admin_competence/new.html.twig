@@ -1,11 +1,23 @@
 {% extends 'layoutadmin.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block title %}New Competence{% endblock %}
 
 {% block body %}
-    <h1>Create new Competence</h1>
 
-    {{ include('admin_competence/_form.html.twig') }}
+<main class="container ">
+    <section class="pt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1 class="title mb-5">Ajouter une compétence</h1>
+            </div>
+        </div>
+        <div class="table-add-event">
+            {% include 'admin_competence/_form.html.twig' with {'label_button': 'Ajouter'} %}
+        </div>
 
-    <a href="{{ path('admin_competence_index') }}">back to list</a>
+        <a class="btn btn-outline-primary mt-5" href="{{ path('admin_competence_index') }}">Retour à la liste</a>
+
+    </section>
+</main>
 {% endblock %}
