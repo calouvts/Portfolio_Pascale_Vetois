@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutadmin.html.twig' %}
 
 {% block title %}Competence index{% endblock %}
 
@@ -36,22 +36,7 @@
     </table>
     <div class="row">
 
-        {% for competence in competences %}
 
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card margin">
-                    <img class="card-img-top" src="" alt="titre">
-                    <div class="card-body">
-                        <h5 class="card-title text-center"> {{ competence.name }}</h5>
-                        <h5 class="card-title text-center text-muted"> {{ competence.photocomp }}</h5>
-                        <h5 class="card-title text-center"> {{competence.description }}</h5>
-                        <p class="card-text"></p>
-                    </div>
-                </div>
-            </div>
-        {% else %}
-            "Il n'y a actuellement aucunes compétences saisies"
-        {% endfor %}
     </div>
     <a href="{{ path('admin_competence_new') }}">Create new</a>
 {% endblock %}

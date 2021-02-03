@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CompetenceRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -37,6 +39,16 @@ class Competence
      * @Assert\Length(max=255)
      */
     private $description;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Realisation::class, mappedBy="competences")
+     */
+    private $realisations;
+
+    public function __construct()
+    {
+        $this->realisations = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -75,6 +87,33 @@ class Competence
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Realisation[]
+     */
+    public function getRealisations(): Collection
+    {
+        return $this->realisations;
+    }
+
+    public function addRealisation(Realisation $realisation): self
+    {
+        if (!$this->realisations->contains($realisation)) {
+            $this->realisations[] = $realisation;
+            $realisation->addCompetence($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRealisation(Realisation $realisation): self
+    {
+        if ($this->realisations->removeElement($realisation)) {
+            $realisation->removeCompetence($this);
+        }
 
         return $this;
     }

@@ -6,6 +6,7 @@ use App\Entity\Competence;
 use App\Form\CompetenceType;
 use App\Repository\CompetenceRepository;
 use App\Repository\ExperienceRepository;
+use App\Repository\RealisationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,11 +19,13 @@ class HomeController extends AbstractController
      * @return Response
      */
     public function index(CompetenceRepository $competenceRepository,
-                          ExperienceRepository $experienceRepository): Response
+                          ExperienceRepository $experienceRepository,
+                          RealisationRepository $realisationRepository): Response
     {
         return $this->render('home/index.html.twig', [
             'competences' => $competenceRepository->findAll(),
             'experiences' => $experienceRepository->findAll(),
+            'realisations'=> $realisationRepository->findAll(),
         ]);
     }
 

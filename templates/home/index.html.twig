@@ -63,7 +63,30 @@
     </div>
     <hr>
     <section>réalisations</section>
+    <div class="row">
 
+        {% for realisation in realisations %}
+
+            <div class="col-sm-6 col-md-3 col-lg-2">
+                <div class="card margin">
+                    <img class="card-img-top" src="" alt="titre">
+                    <div class="card-body">
+                        <h5 class="card-title text-center"> {{ realisation.name }}</h5>
+                        <h5 class="card-title text-center text-muted"> {{ realisation.realisationphoto }}</h5>
+                        <h5 class="card-title text-center"> {{realisation.description }}</h5>
+                        <p class="card-text">{{realisation.projectlink }}</p>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                data-target="#collapse{{ realisation.id }}" aria-expanded="false"
+                                aria-controls="collapse{{ realisation.id }}">En savoir plus
+                        </button>
+                        <div class="collapse" id="collapse{{ realisation.id }}"><p>{{ realisation.description }}</p></div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            "Il n'y a actuellement aucunes compétences saisies"
+        {% endfor %}
+    </div>
     <hr>
     <section>Expériences</section>
 
