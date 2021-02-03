@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
-
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 {% block title %}New Experience{% endblock %}
 
 {% block body %}
     <h1>Create new Experience</h1>
 
-    {{ include('experience/_form.html.twig') }}
+    {{ include('admin_experience/_form.html.twig') }}
 
-    <a href="{{ path('experience_index') }}">back to list</a>
+    <a href="{{ path('admin_experience_index') }}">back to list</a>
 {% endblock %}

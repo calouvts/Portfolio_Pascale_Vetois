@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
- * @Route("/admin/experience", name="admin_logo_")
+ * @Route("/admin/experience", name="admin_experience_")
  */
 class AdminExperienceController extends AbstractController
 {
@@ -57,17 +57,17 @@ class AdminExperienceController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="experience_show", methods={"GET"})
+     * @Route("/{id}", name="show", methods={"GET"})
      */
     public function show(Experience $experience): Response
     {
-        return $this->render('experience/show.html.twig', [
+        return $this->render('admin_experience/show.html.twig', [
             'experience' => $experience,
         ]);
     }
 
     /**
-     * @Route("/modifier/{id}", name="experience_edit")
+     * @Route("/modifier/{id}", name="edit")
      * @ParamConverter("experience", class="App\Entity\Experience", options={"mapping": {"id": "id"}})
      * @param Request $request
      * @param Experience $experience
