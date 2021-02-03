@@ -26,6 +26,13 @@ class ExperienceType extends AbstractType
             'placeholder' => 'Développeur back-end',
         ],
     ])
+            ->add('Company',TextType::class, [
+                'label' => 'entreprise',
+                'attr' => [
+                    'placeholder' => 'Société X',
+                ],
+            ])
+
             ->add('Description', TextareaType::class, [
         'label' => 'Description',
         'attr' => [
