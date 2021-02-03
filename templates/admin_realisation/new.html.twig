@@ -1,0 +1,11 @@
+{% extends 'layoutadmin.html.twig' %}
+
+{% block title %}New Realisation{% endblock %}
+
+{% block body %}
+    <h1>Create new Realisation</h1>
+
+    {{ include('admin_realisation/_form.html.twig') }}
+
+    <a href="{{ path('admin_realisation_index') }}">back to list</a>
+{% endblock %}

@@ -47,7 +47,7 @@ class AdminCompetenceController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($competence);
             $entityManager->flush();
-
+            $this->addFlash('success', 'La compétence a bien ajoutée');
             return $this->redirectToRoute('admin_competence_index');
         }
 
@@ -83,7 +83,7 @@ class AdminCompetenceController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
+            $this->addFlash('success', 'La compétence a bien modifiée');
             return $this->redirectToRoute('admin_competence_index');
         }
 
@@ -103,6 +103,7 @@ class AdminCompetenceController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($competence);
             $entityManager->flush();
+            $this->addFlash('success', 'La compétence a bien été supprimée');
         }
 
         return $this->redirectToRoute('admin_competence_index');
