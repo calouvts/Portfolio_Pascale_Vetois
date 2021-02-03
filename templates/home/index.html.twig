@@ -37,7 +37,30 @@
 
     <hr>
     <section>compétences</section>
+    <div class="row">
 
+        {% for competence in competences %}
+
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card margin">
+                    <img class="card-img-top" src="" alt="titre">
+                    <div class="card-body">
+                        <h5 class="card-title text-center"> {{ competence.name }}</h5>
+                        <h5 class="card-title text-center text-muted"> {{ competence.photocomp }}</h5>
+                        <h5 class="card-title text-center"> {{competence.description }}</h5>
+                        <p class="card-text"></p>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                data-target="#collapse{{ competence.id }}" aria-expanded="false"
+                                aria-controls="collapse{{ competence.id }}">En savoir plus
+                        </button>
+                        <div class="collapse" id="collapse{{ competence.id }}"><p>{{ competence.description }}</p></div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            "Il n'y a actuellement aucunes compétences saisies"
+        {% endfor %}
+    </div>
     <hr>
     <section>réalisations</section>
 
@@ -66,7 +89,7 @@
                     </div>
                 </div>
             {% else %}
-                "Il n'y a actuellement aucun évènement de programmé, merci de venir consulter cette section ultérieurement"
+                "pas d'expérience saisies"
             {% endfor %}
         </div>
     </section>
