@@ -1,0 +1,20 @@
+@import "~bootstrap/scss/bootstrap";
+@import 'variables.scss';
+
+body {
+    background-color: $light;
+}
+
+.navbar {
+    background-color: $primary;
+    font-style: color($secondary);
+}
+
+h2,
+h1 {
+    font-family: $title-font;
+    color: $primary;
+ }
+p {
+    font-family: $text-font;
+ }
