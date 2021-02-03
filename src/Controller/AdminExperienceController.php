@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
  * @Route("/admin/experience", name="admin_logo_")
@@ -18,6 +19,8 @@ class AdminExperienceController extends AbstractController
 {
     /**
      * @Route("/", name="index")
+     * @param ExperienceRepository $experienceRepository
+     * @return Response
      */
     public function index(ExperienceRepository $experienceRepository): Response
     {
@@ -66,6 +69,9 @@ class AdminExperienceController extends AbstractController
     /**
      * @Route("/modifier/{id}", name="experience_edit")
      * @ParamConverter("experience", class="App\Entity\Experience", options={"mapping": {"id": "id"}})
+     * @param Request $request
+     * @param Experience $experience
+     * @return Response
      */
 
     public function edit(Request $request, Experience $experience): Response
