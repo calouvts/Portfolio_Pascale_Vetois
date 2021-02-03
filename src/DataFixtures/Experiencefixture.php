@@ -5,7 +5,6 @@ namespace App\DataFixtures;
 use App\Entity\Experience;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use App\Entity\Logo;
 use Faker;
 
 class Experiencefixture extends Fixture

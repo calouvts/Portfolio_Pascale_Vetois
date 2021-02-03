@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Competence;
+use App\Form\CompetenceType;
+use App\Repository\CompetenceRepository;
 use App\Repository\ExperienceRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,16 +14,21 @@ class HomeController extends AbstractController
 {
     /**
      * @Route("/", name="home")
+     * @param CompetenceRepository $competenceRepository
      * @return Response
      */
-
-    public function index(ExperienceRepository $experienceRepository): Response
+    public function index(CompetenceRepository $competenceRepository,
+                          ExperienceRepository $experienceRepository): Response
     {
         return $this->render('home/index.html.twig', [
+            'competences' => $competenceRepository->findAll(),
             'experiences' => $experienceRepository->findAll(),
         ]);
     }
 
 
-}
+   }
+
+
+
 
