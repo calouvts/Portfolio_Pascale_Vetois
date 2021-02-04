@@ -23,7 +23,7 @@ class HomeController extends AbstractController
                           RealisationRepository $realisationRepository): Response
     {
         return $this->render('home/index.html.twig', [
-            'competences' => $competenceRepository->findAll(),
+            'competences' => $competenceRepository->findAll(['name' => 'ASC']),
             'experiences' => $experienceRepository->findAll(),
             'realisations'=> $realisationRepository->findAll(),
         ]);

@@ -1,11 +1,24 @@
 {% extends 'layoutadmin.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block title %}New Realisation{% endblock %}
 
 {% block body %}
-    <h1>Create new Realisation</h1>
 
-    {{ include('admin_realisation/_form.html.twig') }}
+    <main class="container ">
+        <section class="pt-5">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h1 class="title mb-5">Ajouter un projet/réalisation</h1>
+                </div>
+            </div>
+            <div class="table-add-event">
+                {% include 'admin_realisation/_form.html.twig' with {'label_button': 'Ajouter'} %}
+            </div>
 
-    <a href="{{ path('admin_realisation_index') }}">back to list</a>
+            <a class="btn btn-outline-primary mt-5" href="{{ path('admin_realisation_index') }}">Retour à la liste</a>
+
+        </section>
+    </main>
+
 {% endblock %}
