@@ -21,7 +21,7 @@
             <tr>
                 <td>{{ realisation.id }}</td>
                 <td>{{ realisation.name }}</td>
-                <td>{{ realisation.realisationphoto }}</td>
+                <td>    <img class="img-thumbnail little" src="{{ vich_uploader_asset(realisation, 'realisationphotoFile') }}" alt="{{ realisation.name }}"></td>
                 <td>{{ realisation.description }}</td>
                 <td>{{ realisation.projectlink }}</td>
                 <td>
