@@ -1,5 +1,5 @@
 {% block stylesheets %}
-    {{ encore_entry_link_tags('app') }}
+    {{ encore_entry_link_tags('admin') }}
 {% endblock %}
 <nav class="navbar navbar-expand-xl navbar navbar-dark shadow p-2">
 
@@ -14,18 +14,30 @@
     <div class="collapse navbar-collapse w-100 text-left" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item pr-3">
-                <a class="nav-link" href="{{ path("home") }}">Retour au site</a>
+                <a class="nav-link text-uppercase" href="{{ path("home") }}">Retour au site</a>
             </li>
             <li class="nav-item pr-3">
-                <a class="nav-link" href="{{ path('admin_competence_index') }}">compétences</a>
+                <a class="nav-link text-uppercase" href="{{ path('admin_competence_index') }}">Compétences</a>
             </li>
 
             </li>
             <li class="nav-item pr-3">
-                <a class="nav-link" href="{{ path('admin_realisation_index') }}">Réalisations</a>
+                <a class="nav-link text-uppercase" href="{{ path('admin_realisation_index') }}">Réalisations</a>
             </li>
             <li class="nav-item pr-3">
-                <a class="nav-link" href="{{ path('admin_experience_index') }}">Expériences</a>
+                <a class="nav-link text-uppercase" href="{{ path('admin_experience_index') }}">Expériences</a>
+            </li>
+            <li class="nav-item pr-3 d-flex flex-column justify-content-center">
+                <div class="btn-group">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <img src="{{ asset('build/user.ico') }}" alt="logo_admin" class="logo-admin">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a>
+                        <a class="dropdown-item" href="{{ path('home') }}">Revenir à l'accueil</a>
+                    </div>
+                </div>
             </li>
 
         </ul>

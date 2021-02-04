@@ -2,11 +2,15 @@
 
 {% block title %}Experience index{% endblock %}
 
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
 {% block body %}
-    <h1>Experience index</h1>
+    <h1 class ="pt-5">Liste des expériences professionnelles</h1>
+
 
     <table class="table">
-        <thead>
+        <thead class ="bg-primary">
             <tr>
                 <th>Id</th>
                 <th>Période</th>

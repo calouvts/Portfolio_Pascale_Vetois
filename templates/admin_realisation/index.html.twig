@@ -2,11 +2,14 @@
 
 {% block title %}Realisation index{% endblock %}
 
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
 {% block body %}
-    <h1>Realisation index</h1>
+    <h1 class ="pt-5">Liste des projets</h1>
 
     <table class="table">
-        <thead>
+        <thead class ="bg-primary">
             <tr>
                 <th>Id</th>
                 <th>Name</th>

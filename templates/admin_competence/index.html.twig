@@ -1,12 +1,15 @@
 {% extends 'layoutadmin.html.twig' %}
 
 {% block title %}Competence index{% endblock %}
-
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('admin') }}
+    {% endblock %}
 {% block body %}
-    <h1>Competence index</h1>
+    <h1 class ="pt-5">Liste des compétences</h1>
+
 
     <table class="table">
-        <thead>
+        <thead class ="bg-primary">
             <tr>
                 <th>Id</th>
                 <th>Name</th>
