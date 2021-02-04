@@ -2,12 +2,21 @@
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 {% block title %}Edit Realisation{% endblock %}
 
+
 {% block body %}
-    <h1>Edit Realisation</h1>
+    <main class="container ">
+        <section class="pt-5">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h1 class="title mb-5">Modifier une réalisation</h1>
+                </div>
+            </div>
+            <div class="table-add-event mt-5">
+                {% include 'admin_realisation/_form.html.twig' with {'label_button': 'Modifier'} %}
+            </div>
 
-    {{ include('admin_realisation/_form.html.twig', {'button_label': 'Update'}) }}
+            <a class="btn btn-outline-primary mt-5" href="{{ path('admin_realisation_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('admin_realisation_index') }}">back to list</a>
-
-    {{ include('admin_realisation/_delete_form.html.twig') }}
+        </section>
+    </main>
 {% endblock %}

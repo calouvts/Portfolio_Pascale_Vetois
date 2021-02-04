@@ -7,6 +7,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class CompetenceType extends AbstractType
 {
@@ -19,12 +21,12 @@ class CompetenceType extends AbstractType
                     'placeholder' => 'HTML, CSS',
                 ],
             ])
-            ->add('photocomp', TextType::class, [
-                'label' => 'URL',
-                'attr' => [
-                    'placeholder' => 'url d\'image',
-                ],
+            ->add('photocompFile', VichImageType::class, [
+                'required'      => false,
+                'label'  => false,
+                'attr' => ['placeholder' => 'Sélectionner un fichier'],
             ])
+
             ->add('description', TextType::class, [
                 'label' => 'description de la compétence',
                 'attr' => [

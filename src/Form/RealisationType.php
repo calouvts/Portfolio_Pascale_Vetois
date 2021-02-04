@@ -9,6 +9,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class RealisationType extends AbstractType
 {
@@ -21,12 +23,12 @@ class RealisationType extends AbstractType
             'placeholder' => 'mon site',
         ],
     ])
-            ->add('realisationphoto',TextType::class, [
-                'label' => 'Nom',
-                'attr' => [
-                    'placeholder' => 'photo',
-                ],
+            ->add('realisationphotoFile',VichImageType::class, [
+                'required'      => false,
+                'label'  => false,
+                'attr' => ['placeholder' => 'Sélectionner un fichier'],
             ])
+
             ->add('description', TextType::class, [
                 'label' => 'description',
                 'attr' => [
