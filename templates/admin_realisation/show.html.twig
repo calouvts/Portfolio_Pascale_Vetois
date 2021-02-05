@@ -30,9 +30,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_realisation_index') }}">back to list</a>
+    <a class="btn btn-outline-primary mt-5" href="{{ path('admin_realisation_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('admin_realisation_edit', {'id': realisation.id}) }}">edit</a>
+    <a class="btn btn-outline-primary mt-5" href="{{ path('admin_realisation_edit', {'id': realisation.id}) }}">Modifier</a>
 
     {{ include('admin_realisation/_delete_form.html.twig') }}
 {% endblock %}

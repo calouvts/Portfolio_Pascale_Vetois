@@ -29,8 +29,8 @@
                 <td>{{ experience.company }}</td>
                 <td>{{ experience.description }}</td>
                 <td>
-                 <a href="{{ path('admin_experience_show', {'id': experience.id}) }}">show</a>
-                    <a href="{{ path('admin_experience_edit', {'id': experience.id}) }}">edit</a>
+                 <a href="{{ path('admin_experience_show', {'id': experience.id}) }}">Détail</a>
+                    <a href="{{ path('admin_experience_edit', {'id': experience.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +41,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_experience_new') }}">Create new</a>
+    <a class="btn btn-outline-primary mt-5" href="{{ path('admin_experience_new') }}">Ajouter</a>
 {% endblock %}
