@@ -41,6 +41,12 @@ class RealisationType extends AbstractType
                     'placeholder' => 'https//',
                 ],
             ])
+            ->add('priority', TextType::class, [
+                'label' => 'définissez la priorité d affichage',
+                'attr' => [
+                    'placeholder' => '1'
+                ]
+            ])
             ->add('competences', EntityType::class, [
                 'class' => Competence::class,
                 'choice_label' => 'name',
@@ -48,6 +54,7 @@ class RealisationType extends AbstractType
                 'by_reference' => false,
                 'expanded' => true
             ])
+
         ;
     }
 

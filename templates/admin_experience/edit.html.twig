@@ -3,11 +3,19 @@
 {% block title %}Edit Experience{% endblock %}
 
 {% block body %}
-    <h1>Edit Experience</h1>
+    <main class="container ">
+        <section class="pt-5">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h1 class="title mb-5">Modifier une expérience/Formation</h1>
+                </div>
+            </div>
+            <div class="table-add-event">
+                {% include 'admin_experience/_form.html.twig' with {'label_button': 'Modifier'} %}
+            </div>
 
-    {{ include('admin_experience/_form.html.twig', {'button_label': 'Update'}) }}
+            <a class="btn btn-outline-primary mt-5" href="{{ path('admin_experience_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('admin_experience_index') }}">back to list</a>
-
-    {{ include('admin_experience/_delete_form.html.twig') }}
+        </section>
+    </main>
 {% endblock %}

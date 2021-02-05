@@ -21,7 +21,7 @@
 
 
     <section class="container">
-        <div class="row container ">
+        <div class="row container id="apropos">
             <div><p>Après une carrière dans l'assurance prévoyance et emprunteur où j'ai pu parfaire mes compétences
                 dans les domaines des adhésions , des prestations, du médical ainsi que dans la gestion de projets MOA,
                 j'embrasse aujourd'hui l'univers du développement Web, avec l'ambition de vous faire profiter de mes compétence transverses
@@ -58,14 +58,14 @@
 
     <section class="mb-5 pt-5">
 
-        <h2 class="text-center">Compétences</h2>
+        <h2 class="text-center" id="competences">Compétences</h2>
         <div class = "container my-4">
-    <div class="row mx-0 d-flex justify-content-center py-3">
+    <div class="row mx-0 d-flex justify-content-center py-3" >
 
         {% for competence in competences %}
 
             <div class="layout col-sm-6 col-md-4 col-lg-3 mt-5 pt-5">
-                <div class="card margin border-0 align-items-center">
+                <div class="card margin border-0 align-items-center" >
                     <h5 class="card-title text-center textcard pb-5"> {{ competence.name }}</h5>
                     <img class="card-img-top opacitycard w-50 text-center" src="{{ vich_uploader_asset(competence, 'photocompFile') }}" alt="{{ competence.name }}">
 
@@ -92,7 +92,7 @@
 
 
     <section class="mb-5 pt-5">
-    <h2 class="text-center ">Réalisations</h2>
+    <h2 class="text-center " id="realisations" >Réalisations</h2>
         <div class = "container my-4">
     <div class="row">
 
@@ -154,7 +154,7 @@
     </section>
 
     <section class="mb-5 pt-5">
-    <h2 class="text-center">Expériences</h2>
+    <h2 class="text-center" id="experiences" >Expériences</h2>
     <section class="container">
         <div class="row">
 
@@ -164,9 +164,12 @@
                     <div class="card margin border-0">
                         <div class="card-body row">
                             <div class="col-lg-12">
+                                {% if experience.type == 'experience' %}
                                 <h5 class="card-title text-center textcard bg-secondary"> {{ experience.name }}</h5>
                             <h6 class="card-title text-Left textcard text-secondary"> {{ experience.year }}</h6>
                                 <p class="card-title text-left textcard"> {{ experience.company }}</p>
+
+                                {% endif %}
                             </div>
 
 
@@ -180,6 +183,37 @@
         </div>
     </section>
     </section>
+
+        <section class="mb-5 pt-5">
+            <h2 class="text-center" id="formation">Formation</h2>
+            <section class="container">
+                <div class="row">
+
+                    {% for experience in formations %}
+
+                        <div class="layout col-sm-8 col-md-6 col-lg-4 pt-5 ">
+                            <div class="card margin border-0">
+                                <div class="card-body row">
+                                    <div class="col-lg-12">
+                                        {% if experience.type == 'formation' %}
+                                        <h5 class="card-title text-center textcard bg-secondary"> {{ experience.name }}</h5>
+                                        <h6 class="card-title text-Left textcard text-secondary"> {{ experience.year }}</h6>
+                                        <p class="card-title text-left textcard"> {{ experience.company }}</p>
+                                        {% endif %}
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        "pas d'expérience saisies"
+                    {% endfor %}
+
+                </div>
+            </section>
+        </section>
+
     </section>
 </main>
 

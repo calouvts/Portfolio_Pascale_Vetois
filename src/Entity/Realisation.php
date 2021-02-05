@@ -74,6 +74,11 @@ class Realisation
 
     private ?\DateTimeInterface $uploadedAt ;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $priority;
+
 
 
 
@@ -184,6 +189,18 @@ class Realisation
     public function setUploadedAt(?\DateTimeInterface $uploadedAt): self
     {
         $this->uploadedAt = $uploadedAt;
+
+        return $this;
+    }
+
+    public function getPriority(): ?int
+    {
+        return $this->priority;
+    }
+
+    public function setPriority(?int $priority): self
+    {
+        $this->priority = $priority;
 
         return $this;
     }

@@ -33,6 +33,12 @@ class CompetenceType extends AbstractType
                     'placeholder' => 'framework ',
                 ],
             ])
+            ->add('priority', TextType::class, [
+                'label' => 'définissez la priorité d affichage',
+                'attr' => [
+                    'placeholder' => '1'
+            ]
+            ])
         ;
     }
 
