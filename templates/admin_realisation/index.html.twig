@@ -28,8 +28,8 @@
                 <td>{{ realisation.description }}</td>
                 <td>{{ realisation.projectlink }}</td>
                 <td>
-                    <a href="{{ path('admin_realisation_show', {'id': realisation.id}) }}">show</a>
-                    <a href="{{ path('admin_realisation_edit', {'id': realisation.id}) }}">edit</a>
+                    <a href="{{ path('admin_realisation_show', {'id': realisation.id}) }}">Détail</a>
+                    <a href="{{ path('admin_realisation_edit', {'id': realisation.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -40,5 +40,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_realisation_new') }}">Create new</a>
+    <a class="btn btn-outline-primary mt-5" href="{{ path('admin_realisation_new') }}">Ajouter</a>
 {% endblock %}

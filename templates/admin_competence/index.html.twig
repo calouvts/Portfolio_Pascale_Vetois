@@ -26,8 +26,8 @@
                 <td> <img class="img-thumbnail little" src="{{ vich_uploader_asset(competence, 'photocompFile') }}" alt="{{ competence.name }}"></td>
                 <td>{{ competence.description }}</td>
                 <td>
-                    <a href="{{ path('admin_competence_show', {'id': competence.id}) }}">show</a>
-                    <a href="{{ path('admin_competence_edit', {'id': competence.id}) }}">edit</a>
+                    <a href="{{ path('admin_competence_show', {'id': competence.id}) }}">Détail</a>
+                    <a href="{{ path('admin_competence_edit', {'id': competence.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +41,6 @@
 
 
     </div>
-    <a href="{{ path('admin_competence_new') }}">Create new</a>
+
+    <a class="btn btn-outline-primary mt-5" href="{{ path('admin_competence_new') }}">Ajouter</a>
 {% endblock %}

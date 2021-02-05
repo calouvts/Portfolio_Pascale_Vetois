@@ -14,7 +14,7 @@
             <div class="table-add-event mt-5">
                 {% include 'admin_realisation/_form.html.twig' with {'label_button': 'Modifier'} %}
             </div>
-
+            {{ include('admin_realisation/_delete_form.html.twig') }}
             <a class="btn btn-outline-primary mt-5" href="{{ path('admin_realisation_index') }}">Retour à la liste</a>
 
         </section>

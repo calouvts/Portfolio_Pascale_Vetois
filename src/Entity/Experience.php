@@ -34,16 +34,21 @@ class Experience
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Assert\Length(max=255)
      */
     private $description;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(max=255)
      */
     private $company;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(max=255)
      */
     private $type;
 

@@ -21,13 +21,13 @@
 
 
     <section class="container">
-        <div class="row container id="apropos">
+        <div class="row container pt-4" id="apropos">
             <div><p>Après une carrière dans l'assurance prévoyance et emprunteur où j'ai pu parfaire mes compétences
                 dans les domaines des adhésions , des prestations, du médical ainsi que dans la gestion de projets MOA,
                 j'embrasse aujourd'hui l'univers du développement Web, avec l'ambition de vous faire profiter de mes compétence transverses
                 dans ces domaines</p></div>
-            <div class="col-6" ><img src="{{ asset('build/identite.jpg') }}"/></div>
-            <div class="col-6">
+            <div class="col-lg-6 col-md-6" ><img src="{{ asset('build/identite.jpg') }}"/></div>
+            <div class="col-lg-6 col-md-6">
                 <p>06.87.38.06.89</p>
 
                 <p>pascalevetois@gmail.com
@@ -64,7 +64,7 @@
 
         {% for competence in competences %}
 
-            <div class="layout col-sm-6 col-md-4 col-lg-3 mt-5 pt-5">
+            <div class="layout col-sm-6 col-md-4 col-lg-3 mt-3 pt-2">
                 <div class="card margin border-0 align-items-center" >
                     <h5 class="card-title text-center textcard pb-5"> {{ competence.name }}</h5>
                     <img class="card-img-top opacitycard w-50 text-center" src="{{ vich_uploader_asset(competence, 'photocompFile') }}" alt="{{ competence.name }}">
@@ -72,7 +72,7 @@
                         <div class="card-body p-3 mt-3 responsiveslayout"> <p class="text-black-50 "> {{ competence.description }}</p></div>
 
                     <div class="card-body card-img-overlay">
-                        <div class="description p-3 mt-3"> <p class="text-white "> {{ competence.description }}</p></div>
+                        <div class="description p-3 mt-3"> <p class="text-secondary "> {{ competence.description }}</p></div>
                     </div>
                 </div>
                 <div class="layout col-sm-6 col-md-4 col-lg-3">
@@ -156,18 +156,19 @@
     <section class="mb-5 pt-5">
     <h2 class="text-center" id="experiences" >Expériences</h2>
     <section class="container">
-        <div class="row">
+        <div class="row d-flex">
 
             {% for experience in experiences %}
 
                 <div class="layout col-sm-8 col-md-6 col-lg-4 pt-5 ">
-                    <div class="card margin border-0">
+                    <div class="card margin border-0 align-items-center">
                         <div class="card-body row">
                             <div class="col-lg-12">
                                 {% if experience.type == 'experience' %}
                                 <h5 class="card-title text-center textcard bg-secondary"> {{ experience.name }}</h5>
                             <h6 class="card-title text-Left textcard text-secondary"> {{ experience.year }}</h6>
                                 <p class="card-title text-left textcard"> {{ experience.company }}</p>
+                                    <p class="card-title text-left textcard"> {{ experience.description }}</p>
 
                                 {% endif %}
                             </div>
@@ -187,7 +188,7 @@
         <section class="mb-5 pt-5">
             <h2 class="text-center" id="formation">Formation</h2>
             <section class="container">
-                <div class="row">
+                <div class="row d-flex">
 
                     {% for experience in formations %}
 
@@ -199,6 +200,7 @@
                                         <h5 class="card-title text-center textcard bg-secondary"> {{ experience.name }}</h5>
                                         <h6 class="card-title text-Left textcard text-secondary"> {{ experience.year }}</h6>
                                         <p class="card-title text-left textcard"> {{ experience.company }}</p>
+                                            <p class="card-title text-left textcard"> {{ experience.description }}</p>
                                         {% endif %}
                                     </div>
 

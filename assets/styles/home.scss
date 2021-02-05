@@ -74,6 +74,8 @@ li {
   .descrealisation, {
     display: none;
   }
+
+
 }
 
 .card {
@@ -100,6 +102,7 @@ h2 {
   position: relative;
   overflow: hidden;
   text-align: center;
+  color: $primary;
 }
 h2:before, h2:after {
   position: absolute;
@@ -108,7 +111,7 @@ h2:before, h2:after {
   width: 50%;
   height: 1px;
   content: '\a0';
-  background-color: #000;
+  background-color: $primary;
   color:$primary;
 }
 h2:before {
